@@ -19,6 +19,14 @@
      <p v-show="inStock">In Stock</p>
      <!-- haven't v-else. when false - display: none -->
    </div>
+   <div>
+     <ul>
+       <li v-for="detail in details" :key="detail.key">{{ detail }}</li>
+     </ul>
+     <div v-for="variant in variants" :key="variant.key">
+       <p>{{ variant.color }} {{ variant.id }}</p>
+     </div>
+   </div>
  </div>
 </template>
 
@@ -29,8 +37,19 @@ export default {
     return {
       inStock: false,
     //  false - show v-else and display: none when v-show
-      inventory: 10
+      inventory: 10,
     //  <10 , 10<= , 0<=
+      details: ["one","two","three"],
+      variants: [
+        {
+          id: 1112,
+          color: 'red'
+        },
+        {
+          id: 1113,
+          color: 'blue'
+        }
+      ]
     }
   }
 }

@@ -1,20 +1,32 @@
 <template>
-  <div class="product">
-    <div class="product-image">
-      <!-- v-bind:src == :src -->
-      <img :src="image" :alt="altText">
-    </div>
+  <div>
+    <div class="nav-bar"></div>
+    <div class="product">
+      <div class="product-image">
+        <!-- v-bind:src == :src -->
+        <img :src="image" :alt="altText">
+      </div>
 
-    <div class="product-info">
-      <h1>{{ product }}</h1>
-      <p v-if="inStock">In Stock</p>
-      <p v-else>Out of Stock</p>
-      <span v-if="onSale">On sale!</span>
-      <p>{{ description }}</p>
-      <a :href="link" target="_blank">More products like this</a>
-    </div>
+      <div class="product-info">
+        <h1>{{ product }}</h1>
+        <p v-if="inStock">In Stock</p>
+        <p v-else>Out of Stock</p>
+        <span v-if="onSale">On sale!</span>
+        <p>{{ description }}</p>
+        <a :href="link" target="_blank">More products like this</a>
+        <ul>
+          <li v-for="detail in details" :key="detail.key"> {{ detail }} </li>
+        </ul>
+        <div v-for="variant in variants" :key="variant.variantId">
+          <p> {{ variant.variantColor }} </p>
+        </div>
+        <ul>
+          <li v-for="size in sizes" :key="size.key"> {{size}} </li>
+        </ul>
+      </div>
 
-    <examples v-if="show"/>
+      <examples v-if="show"/>
+    </div>
   </div>
 </template>
 
@@ -26,6 +38,7 @@ export default {
   data() {
     return {
       show: false,
+
       product: 'Socks',
       description: 'A pair of warm, fuzzy socks',
       image: require('/src/assets/vmSocks-green.jpg'),
@@ -33,6 +46,18 @@ export default {
       link: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks',
       inStock: true,
       onSale: true,
+      details: ["80% cotton","20% polyester","Gender-neutral"],
+      variants: [
+        {
+          variantId: 2234,
+          variantColor: 'green'
+        },
+        {
+          variantId: 2235,
+          variantColor: 'blue'
+        }
+      ],
+      sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
     }
   }
 }
