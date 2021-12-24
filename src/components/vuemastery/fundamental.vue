@@ -7,6 +7,9 @@
 
     <div class="product-info">
       <h1>{{ product }}</h1>
+      <p v-if="inStock">In Stock</p>
+      <p v-else>Out of Stock</p>
+      <span v-if="onSale">On sale!</span>
       <p>{{ description }}</p>
       <a :href="link" target="_blank">More products like this</a>
     </div>
@@ -28,6 +31,8 @@ export default {
       image: require('/src/assets/vmSocks-green.jpg'),
       altText: 'A pair of socks',
       link: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks',
+      inStock: true,
+      onSale: true,
     }
   }
 }
