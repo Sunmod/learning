@@ -46,7 +46,7 @@
 
 export default {
   // components: {People},
-  name: 'HelloWorld',
+  name: 'json-milavitsa',
   props: {
     json: Object,
     product_item: String
