@@ -10,18 +10,21 @@
       <div class="product-info">
         <h1>{{ product }}</h1>
         <p v-if="inStock">In Stock</p>
-        <p v-else>Out of Stock</p>
+        <p v-else :class="{ outOfStock: !inStock }">Out of Stock</p>
 <!--        <span v-if="onSale">On sale!</span>-->
 <!--        <p>{{ description }}</p>-->
 <!--        <a :href="link" target="_blank">More products like this</a>-->
         <ul>
           <li v-for="detail in details" :key="detail.key"> {{ detail }} </li>
         </ul>
-        <div v-for="variant in variants" :key="variant.variantId">
-          <p @mouseover="updateProduct(variant.variantImage)"> {{ variant.variantColor }} </p>
+        <div class="color-box"
+             v-for="variant in variants"
+             :key="variant.variantId"
+             :style="{ backgroundColor: variant.variantColor }"
+             @mouseover="updateProduct(variant.variantImage)">
         </div>
 
-        <button @click="addToCart">
+        <button @click="addToCart" :disabled="!inStock" :class="{ disabledButton: !inStock }">
           Add to cart
         </button>
         <button @click="cart--">
@@ -55,7 +58,7 @@ export default {
       image: require('/src/assets/vmSocks-green.jpg'),
       altText: 'A pair of socks',
       link: 'https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=socks',
-      inStock: true,
+      inStock: false,
       onSale: true,
       details: ["80% cotton","20% polyester","Gender-neutral"],
       variants: [
@@ -174,5 +177,9 @@ textarea {
 .activeTab {
   color: #16C0B0;
   text-decoration: underline;
+}
+
+.outOfStock {
+  text-decoration: line-through;
 }
 </style>
