@@ -59,9 +59,6 @@
          Cart ({{ cart }})
        </div>
      </div>
-     <div class="item">
-
-     </div>
    </div>
  </div>
 </template>
