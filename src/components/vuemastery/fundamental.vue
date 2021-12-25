@@ -11,18 +11,29 @@
         <h1>{{ product }}</h1>
         <p v-if="inStock">In Stock</p>
         <p v-else>Out of Stock</p>
-        <span v-if="onSale">On sale!</span>
-        <p>{{ description }}</p>
-        <a :href="link" target="_blank">More products like this</a>
+<!--        <span v-if="onSale">On sale!</span>-->
+<!--        <p>{{ description }}</p>-->
+<!--        <a :href="link" target="_blank">More products like this</a>-->
         <ul>
           <li v-for="detail in details" :key="detail.key"> {{ detail }} </li>
         </ul>
         <div v-for="variant in variants" :key="variant.variantId">
-          <p> {{ variant.variantColor }} </p>
+          <p @mouseover="updateProduct(variant.variantImage)"> {{ variant.variantColor }} </p>
         </div>
-        <ul>
-          <li v-for="size in sizes" :key="size.key"> {{size}} </li>
-        </ul>
+
+        <button @click="addToCart">
+          Add to cart
+        </button>
+        <button @click="cart--">
+          Remove from cart
+        </button>
+        <div class="cart">
+          Cart({{cart}})
+        </div>
+
+<!--        <ul>-->
+<!--          <li v-for="size in sizes" :key="size.key"> {{size}} </li>-->
+<!--        </ul>-->
       </div>
 
       <examples v-if="show"/>
@@ -37,7 +48,7 @@ export default {
   components: {Examples},
   data() {
     return {
-      show: false,
+      show: true,
 
       product: 'Socks',
       description: 'A pair of warm, fuzzy socks',
@@ -50,15 +61,26 @@ export default {
       variants: [
         {
           variantId: 2234,
-          variantColor: 'green'
+          variantColor: 'green',
+          variantImage: require('/src/assets/vmSocks-green.jpg'),
         },
         {
           variantId: 2235,
-          variantColor: 'blue'
+          variantColor: 'blue',
+          variantImage: require('/src/assets/vmSocks-blue.jpg'),
         }
       ],
-      sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL']
+      sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+      cart: 0
     }
+  },
+  methods: {
+    addToCart() {
+      this.cart += 1
+    },
+    updateProduct(variantImage) {
+      this.image = variantImage
+    },
   }
 }
 </script>
