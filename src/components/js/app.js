@@ -1,5 +1,5 @@
 let ford = {
-    color: 'blue',
+    color: 'green',
     maxSpeed: 250,
     audio: {
         brand: 'Yamaha',
@@ -7,20 +7,27 @@ let ford = {
     },
     cost: 4000000,
 };
-let bmw = {
-    color: 'yellow',
-};
+
+let color = getColor;
+color();
+function getColor(currentColor = 'red') {
+    currentColor = ford.color;
+    if (currentColor == 'red') {
+        return;
+    }
+    console.log(currentColor)
+}
 
 
-// /*
-// дз изменить значение макс скорости через функцию
+/*
+дз изменить значение макс скорости через функцию
 console.log('Первоначальная макс скорость: ' + ford.maxSpeed)
 speedChange(ford)
 function speedChange(theCar) {
     theCar.maxSpeed = 300
     console.log('Измененная макс скорость:' + ford.maxSpeed)
 }
-// */
+*/
 
 /*
 знакомство с функциями
