@@ -73,7 +73,7 @@ export default {
           variantImage: require('/src/assets/vmSocks-blue.jpg'),
         }
       ],
-      sizes: ['S', 'M', 'L', 'XL', 'XXL', 'XXXL'],
+      sizes: ['S', 'M', 'L', 'XL', 'XXL'],
       cart: 0
     }
   },
@@ -92,7 +92,7 @@ export default {
 body {
   font-family: tahoma;
   color:#282828;
-  margin: 0px;
+  margin: 0;
 }
 
 .nav-bar {
@@ -111,7 +111,7 @@ img {
   border: 1px solid #d8d8d8;
   width: 70%;
   margin: 40px;
-  box-shadow: 0px .5px 1px #d8d8d8;
+  box-shadow: 0 .5px 1px #d8d8d8;
 }
 
 .product-image {
