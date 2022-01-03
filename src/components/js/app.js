@@ -8,6 +8,26 @@ let ford = {
     cost: 4000000,
 };
 
+/*
+дз сделать стрелочную функцию
+(function (){
+    console.log('Я стрелочная функция');
+}());
+
+let stringFunc = () => 'Я дз по стрелочной функции';
+console.log(stringFunc())
+ */
+
+/*
+анонимная стрелочная функция
+let anonym = (message, count) => {
+    return message + count;
+};
+console.log(anonym('this is => ', 4));
+ */
+
+/*
+дз фунция и условие
 let color = getColor;
 color();
 function getColor(currentColor = 'red') {
@@ -17,7 +37,7 @@ function getColor(currentColor = 'red') {
     }
     console.log(currentColor)
 }
-
+ */
 
 /*
 дз изменить значение макс скорости через функцию
