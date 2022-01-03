@@ -5,8 +5,28 @@ let ford = {
         brand: 'Yamaha',
         speakers: 12,
     },
-    cost: 4000000,
+    drivers: ['Степан', 'Матвей', 'Александр'],
+    getDriver(driver) {
+        console.log('Текущий водитель - ' + this.drivers[driver])
+    },
 };
+ford.getDriver(0);
+
+//es 5
+// open: function (message) {
+//     console.log(message)
+// }
+// // // // // // // // // // //
+// function getMessage() {
+//     console.log('Я функция')
+// };
+// getMessage();
+// let car = {
+//     getMethod() {
+//         console.log('Я метод');
+//     }
+// }
+// car.getMethod();
 
 /*
 дз сделать стрелочную функцию
