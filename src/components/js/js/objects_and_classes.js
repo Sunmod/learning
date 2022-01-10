@@ -1,19 +1,12 @@
-let hater = {
-    firstName: 'Bill',
-    lastName: 'Geyts',
-    getName() {
-        return `${this.firstName} ${this.lastName}`
+class  Hater {
+    constructor(firstName, lastName ) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+    }
+    sayName() {
+        console.log(`${this.firstName} ${this.lastName }`)
     }
 }
 
-console.log(hater.getName())
-
-let hater2 = {
-    firstName: 'Donald',
-    lastName: 'Duck',
-    getName() {
-        return `${this.firstName} ${this.lastName}`
-    }
-}
-
-console.log(hater2.getName())
+let hater1 = new Hater('Ronald', 'Tomskiy');
+hater1.sayName()
