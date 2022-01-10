@@ -1,8 +1,7 @@
 let car = {
-    // color: red,
-    open(message) {
-        console.log(message)
-    }
+    drivers: ['Stepan', 'Matvei', 'Ivan'],
+    getDriver(driver) {
+        console.log('Текущий водитель - ' + this.drivers[driver])
+    },
 }
-
-car.open('Открыто - 2');
+car.getDriver(0)
