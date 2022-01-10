@@ -1,16 +1,12 @@
 let ford = {
-    color: 'green',
+    color: 'red',
     maxSpeed: 250,
     audio: {
         brand: 'Yamaha',
         speakers: 12,
     },
     drivers: ['Степан', 'Матвей', 'Александр'],
-    getDriver(driver) {
-        console.log('Текущий водитель - ' + this.drivers[driver])
-    },
 };
-ford.getDriver(0);
 
 //es 5
 // open: function (message) {
@@ -36,6 +32,8 @@ ford.getDriver(0);
 
 let stringFunc = () => 'Я дз по стрелочной функции';
 console.log(stringFunc())
+
+(() => console.log('Второй вариант'))()
  */
 
 /*
