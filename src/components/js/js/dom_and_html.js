@@ -1,7 +1,13 @@
-document.getElementById('header').innerText = 'Измененный заголовок'
-console.log(document.getElementById('header'))
-console.log(typeof  document.getElementById('header'))
+//
+// let findElement1 = document.querySelector('[value="30"]')
+// findElement1.value = 100
+// console.log(findElement1)
 
-let findElement = document.querySelector('[value="30"]')
-findElement.value = 100
+let element = {
+    class: 'someClass',
+    value: 50
+}
+let findElement = document.querySelector('input')
+findElement.className = element.class
+findElement.value = element.value
 console.log(findElement)
