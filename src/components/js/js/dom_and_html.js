@@ -2,5 +2,5 @@ document.getElementById('header').innerText = 'Измененный заголо
 console.log(document.getElementById('header'))
 console.log(typeof  document.getElementById('header'))
 
-let findElement = document.querySelector('div.myClass')
+let findElement = document.querySelector('[value="30"]')
 console.log(findElement)
