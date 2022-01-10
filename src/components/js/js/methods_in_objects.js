@@ -1,8 +1,8 @@
 let car = {
     // color: red,
-    open: function (message) {
+    open(message) {
         console.log(message)
     }
 }
 
-car.open('Открыто');
+car.open('Открыто - 2');
